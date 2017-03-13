@@ -184,7 +184,7 @@ button {
   z-index: 1;
   color: #8d5fd3;
   font-family: "Muli", sans-serif;
-  font-size: 4.5rem;
+  font-size: 2.5em;
   font-weight: 900;
   text-align: center;
   padding: 0;
@@ -193,100 +193,65 @@ button {
 
 /*-----------------------------
 
-Subscribe Cube
+Subscribe
 
 ------------------------------*/
-#cuboid {
-  width: 380px; 
+form{
+  width: 390px;
   margin: 0 auto;
-/*this also makes #cuboid a container for absolutely positioned descendants*/
-  perspective: 1000px;
-}
-#cuboid form {
-/*counter translate*/
-  transform: translateZ(-20px);
-/*propogate 3d space for children*/
-  transform-style: preserve-3d;
-/*prevent height collapse as children are absolutely positioned*/
-  height: 40px;
-/*for smooth animations*/
-  transition: all 0.35s;
+  padding: 0;
 }
 
-.cuboid-text {
-  line-height: 40px; 
-  height: 40px;
-  background: #45b83c;
-  color: #ffffff;
-  font-size: 1.9rem;
+
+
+.info{
+  display: inline-block;
+  margin: 0;
 }
-.loader {
-  background: #45b83c;
-  animation: phase 1s infinite;
+
+.info input {
+  display: block;
+  width: 280px;
+  height: 38px;
+  border: 0;
+  border-radius: 3px;
+  margin: 0;
+  padding: 5px;
+  background: #eee;
 }
-/*pulsating animation for the loader face*/
-@keyframes phase {
-  50%{background: #cfffcc;}
+
+.info input:last-child {
+  margin: 0;
 }
-#email {
-  background: #cfffcc;
-  outline: none; 
-  border: 0 none;
-  font: inherit; 
-  text-align: left; 
-  color: #45b83c;
-  width: 100%; 
-  display:block;
-  padding: 0 10px;
-  box-sizing: border-box;
+
+.info input:focus {
+  outline: none;
 }
-#email .cuboid-text {
-  color: #45b83c;
-}
-#submit {
-  display: none;
-}
-.submit-icon, .reset-icon {
-  position: absolute; 
-  right: 0;
-  top: 0;
-  color: #45b83c;
-  line-height: 40px; 
-  padding: 0 10px;
-/*smooth transitions when user activates input and types something*/
-  transition: all 0.5s;
-/*to make the icons feel like buttons*/
+
+input[type="submit"]{
+  vertical-align: top;
+  height: 38px;
+  width: 98px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 3px;
   cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+  background: #cfffcc;
 }
-.submit-icon {
-  padding-top: 8px;
-}
-/*.active = when the user is typing something*/
-.submit-icon.active {
-  color: #45b83c;
-}
-.reset-icon {
-  color: #cfffcc; 
-  font-size: 14px;
-}
-#cuboid div {
-  position: absolute; 
-  top: 0; 
-  left: 0; 
-  width: 100%;
-}
-/*3D transforms. Each face will be rotated in multiples of -90deg and moved 20px(half of their 40px height) out*/
-#cuboid div:nth-child(1) {transform: rotateX(0deg) translateZ(20px);}
-#cuboid div:nth-child(2) {transform: rotateX(-90deg) translateZ(20px);}
-#cuboid div:nth-child(3) {transform: rotateX(-180deg) translateZ(20px);}
-#cuboid div:nth-child(4) {transform: rotateX(-270deg) translateZ(20px);}
 
-/*the form will have 4 states/classes(default+3) for rotation*/
-#cuboid form:hover, 
-#cuboid form.ready {transform: translateZ(-20px) rotateX(90deg);}
-#cuboid form.loading {transform: translateZ(-20px) rotateX(180deg);}
-#cuboid form.complete {transform: translateZ(-20px) rotateX(270deg);}
-
+input[type="submit"]:hover{
+  background: #cfffcc;
+  font-weight: 200;
+}
+form h1{
+  color:#45b83c;
+  font-size: 1.3em;
+  padding-bottom: 5px;
+}
 
 /* -------------------------------- 
 
@@ -515,7 +480,7 @@ Subscribe Cube
   content: '';
   position: absolute;
   left: 50%;
-  top: 56%;
+  top: 62%;
   -webkit-transform: translateX(-50%) translateY(-50%) scaleX(0);
   -moz-transform: translateX(-50%) translateY(-50%) scaleX(0);
   -ms-transform: translateX(-50%) translateY(-50%) scaleX(0);
@@ -677,7 +642,7 @@ Subscribe Cube
   /*scroll down arrow*/
   position: fixed;
   z-index: 1;
-  top: calc(100% - 150px);
+  top: 50%;
   left: 50%;
   right: auto;
   -webkit-transform: translateX(-50%);
@@ -714,11 +679,57 @@ Subscribe Cube
   visibility: hidden;
 }
 
+
+@-webkit-keyframes cd-translate {
+  0% {
+    -webkit-transform: translateX(-50%);
+  }
+  50% {
+    -webkit-transform: translateY(10px) translateX(-50%);
+  }
+  100% {
+    -webkit-transform: translateX(-50%);
+  }
+}
+@-moz-keyframes cd-translate {
+  0% {
+    -moz-transform: translateX(-50%);
+  }
+  50% {
+    -moz-transform: translateY(10px) translateX(-50%);
+  }
+  100% {
+    -moz-transform: translateX(-50%);
+  }
+}
+@keyframes cd-translate {
+  0% {
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  50% {
+    -webkit-transform: translateY(10px) translateX(-50%);
+    -moz-transform: translateY(10px) translateX(-50%);
+    -ms-transform: translateY(10px) translateX(-50%);
+    -o-transform: translateY(10px) translateX(-50%);
+    transform: translateY(10px) translateX(-50%);
+  }
+  100% {
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
 /*pages*/
 .page-wrapper, .content-wrapper {
   position: relative;
   z-index: 2;
-  background-color: #FFFFFF;  
+  background-color: #fff;  
 }
 .page-wrapper, content-wrapper > * {
   width: 90%;
@@ -750,7 +761,7 @@ Subscribe Cube
   background: #45b83c;
   border-radius: 0.3rem;
   border: none;
-  color: white;
+  color: #fff;
   padding: 12px 32px; 
   text-align: center;
   text-decoration: none;
@@ -758,10 +769,6 @@ Subscribe Cube
   font-size: 16px;
   cursor: pointer;
 }
-
-
-
-
 
 
 /*Modals should cover the whole screen, but be hidden by default.
@@ -824,14 +831,14 @@ article .back1page {
 .modal-title {
 	font-size: 2em;
 	font-weight: 100;
-	color: #eeeeee;
+	color: #eee;
 	margin: 80px auto 30px auto;
 }
 .modal-description {
 	padding: 1em;
 	font-size: 1em;
 	letter-spacing: 0.1em;
-	color: #eeeeee;
+	color: #eee;
 	margin: 0 auto;
 }
 
@@ -902,7 +909,7 @@ figure.overlay figcaption h3{
 	font-size: .9em;
 	top: 50%;
 	letter-spacing: -.5px;
-	color: #ffffff;
+	color: #fff;
 	text-transform: uppercase;
 	padding: 10px 0px;
 	margin: 0;
@@ -977,7 +984,7 @@ figure.overlay.hover figcaption:after{
 ---------------------------------- */
 form {
 
-  margin: 10% auto;
+  margin: 2% auto;
   min-width: 9rem;
 }
 
@@ -999,7 +1006,7 @@ input[type=submit],
 textarea[type=submit] {
   background: #45b83c;
   color: #fff;
-  font-weight: 700;
+  font-weight: 400;
   float: right;
 }
 input::placeholder,
@@ -1054,23 +1061,23 @@ textarea {
  Support for no js main site 
 
 -------------------------------- */
-.no-js .cd-nav-trigger, .no-js .cd-scroll {
+.no-js .nav-trigger, .no-js .scroll {
   display: none;
 }
 
-.no-js .cd-primary-nav {
+.no-js .primary-nav {
   position: relative;
   height: auto;
   min-height: 94px;
   display: block;
   opacity: 1;
 }
-.no-js .cd-primary-nav::after {
+.no-js .primary-nav::after {
   clear: both;
   content: "";
   display: table;
 }
-.no-js .cd-primary-nav ul {
+.no-js .primary-nav ul {
   display: block;
   padding-left: calc(5% + 60px);
   float: right;
@@ -1080,26 +1087,26 @@ textarea {
   -o-transform: translateY(0);
   transform: translateY(0);
 }
-.no-js .cd-primary-nav ul::after {
+.no-js .primary-nav ul::after {
   clear: both;
   content: "";
   display: table;
 }
-.no-js .cd-primary-nav li {
+.no-js .primary-nav li {
   display: inline-block;
   float: left;
   margin-top: 1.4em;
 }
-.no-js .cd-primary-nav li.cd-label {
+.no-js .primary-nav li.label {
   display: none;
 }
-.no-js .cd-primary-nav a {
+.no-js .primary-nav a {
   font-size: 1.6em;
 }
-.no-js .cd-projects-container {
+.no-js .projects-container {
   height: auto;
 }
-.no-js .cd-projects-container .single-project {
+.no-js .projects-container .single-project {
   position: relative;
   -webkit-transform: translateY(0);
   -moz-transform: translateY(0);
@@ -1109,23 +1116,23 @@ textarea {
   top: 0;
   cursor: auto;
 }
-.no-js .cd-projects-container .cd-title {
+.no-js .projects-container .title {
   height: 300px;
 }
-.no-js .cd-projects-container .cd-title::before {
+.no-js .projects-container .title::before {
   height: 300px;
 }
-.no-js .cd-projects-container h2 {
+.no-js .projects-container h2 {
   -webkit-transform: translateY(0);
   -moz-transform: translateY(0);
   -ms-transform: translateY(0);
   -o-transform: translateY(0);
   transform: translateY(0);
 }
-.no-js .cd-projects-container h2::after {
+.no-js .projects-container h2::after {
   display: none;
 }
-.no-js .cd-project-info {
+.no-js .project-info {
   position: relative;
   height: auto;
   top: 0;
@@ -1137,72 +1144,6 @@ textarea {
   opacity: 1;
   visibility: visible;
 }
-.no-js .cd-project-info .content-wrapper {
+.no-js .project-info .content-wrapper {
   margin-top: 0;
 }
-
-
-
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
