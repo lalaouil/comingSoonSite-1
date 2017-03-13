@@ -1,5 +1,4 @@
 jQuery(document).ready(function (event) {
-	"use strict";
 	var projectsContainer = $('.projects-container'),
 		navigation = $('.primary-nav'),
 		triggerNav = $('.nav-trigger'),
@@ -39,8 +38,6 @@ jQuery(document).ready(function (event) {
 		visibleProjectContent.animate({'scrollTop': windowHeight}, 300);
 	});
 
-
-
 	//add/remove the .has-boxshadow to the project content while scrolling 
     var scrolling = false;
     projectsContainer.find('.project-info').on('scroll', function () {
@@ -57,47 +54,3 @@ jQuery(document).ready(function (event) {
 		scrolling = false;
 	}
 });
-
-//signup-cube
-
-//add '.ready' to form when user focuses on it
-$("#email").focus(function () {
-	"use strict";
-    $("#cuboid form").addClass("ready");
-});
-//remove '.ready' when user blurs away but only if there is no content
-$("#email").blur(function () {
-	"use strict";
-	if ($(this).val() === "") {
-	    ("#cuboid form").removeClass("ready");
-	}
-});
-
-//If the user is typing something make the arrow green/.active
-$("#email").keyup(function () {
-	"use strict";
-	//this adds .active class only if the input has some text
-	$(".submit-icon").toggleClass("active", $(this).val().length > 0);
-});
-
-//on form submit remove .ready and add .loading to the form
-$("#cuboid form").submit(function () {
-	"use strict";
-	$(this).removeClass("ready").addClass("loading");
-	//finish loading in 3s
-	setTimeout(complete, 3000);
-	//prevent default form submisson
-	return false;
-});
-function complete() {
-	"use strict";
-	$("#cuboid form").removeClass("loading").addClass("complete");
-}
-//reset/refresh functionality
-$(".reset-icon").click(function () {
-    "use strict";
-	$("#cuboid form").removeClass("complete");
-});
-
-
-
