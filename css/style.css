@@ -25,7 +25,7 @@ html, body {
 }
 
 a {
-  color: #666;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -46,7 +46,7 @@ button {
 }
 .logo {
   top: 7px;
-  left: 12px;
+  left: 10px;
   cursor: pointer;
   -webkit-transition: opacity 0.3s, visibility 0.3s;
   -moz-transition: opacity 0.3s, visibility 0.3s;
@@ -58,7 +58,7 @@ button {
 }
 .nav-trigger {
   top: 7px;
-  right: 12px;
+  right: 10px;
   height: 48px;
   width: 48px;
   border-radius: 50%;
@@ -179,16 +179,16 @@ button {
 }
 .head-title h1 {
   position: relative;
+  top: 10px;
   margin: auto;
-  margin-bottom: 10px;
+  margin-bottom: 18px;
   display: block;
   z-index: 1;
   color: #8d5fd3;
   font-family: "Muli", sans-serif;
-  font-size: 2em;
+  font-size: 1.9em;
   font-weight: 900;
   text-align: center;
-  padding: 0;
 }
 
 /*-----------------------------
@@ -196,12 +196,14 @@ button {
 Subscribe
 
 ------------------------------*/
+.subscribe {
+	margin-bottom: 10px;
+}
 
-.subscribe-button {
+.button-subscribe {
     background-color: #45b83c; /* Green */
     border: none;
-	border-radius: 0.3rem;
-    color: white;
+	border-radius: .3rem;
     padding: 10px 32px;
     text-align: center;
     text-decoration: none;
@@ -214,7 +216,7 @@ Subscribe
 }
 
 
-.subscribe-button:hover {
+.button-subscribe:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
@@ -932,7 +934,8 @@ figure.overlay.hover figcaption:after{
 form {
 
   margin: 2% auto;
-  min-width: 9rem;
+  min-width: 350px;
+  color: #10428c;
 }
 
 input,
@@ -958,7 +961,7 @@ textarea[type=submit] {
 }
 input::placeholder,
 textarea::placeholder {
-  color: #7a7a7a;
+  color: #10428c;
 }
 input.error,
 textarea.error {
@@ -967,34 +970,11 @@ textarea.error {
 }
 input.error::placeholder,
 textarea.error::placeholder {
-  color: black;
+  color: #10428c;
 }
 
 textarea {
   height: 12rem;
-}
-
-.captcha {
-  float: left;
-}
-.captcha input {
-  float: right;
-}
-.captcha input[name=question] {
-  width: 6rem;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  text-align: right;
-  padding-right: 0;
-}
-.captcha [name=captcha] {
-  width: 7rem;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  padding-left: 0.5rem;
-}
-.captcha [name=captcha]::placeholder {
-  text-align: center;
 }
 
 * {
