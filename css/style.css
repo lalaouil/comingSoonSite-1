@@ -580,7 +580,7 @@ Subscribe
 }
 .project-info .content-wrapper article p {
   font-size: 2rem;
-  line-height: 2rem;
+  line-height: 3rem;
   text-align: left;
   padding: 1.7rem;
 }
@@ -609,7 +609,7 @@ Subscribe
   /*scroll down arrow*/
   position: fixed;
   z-index: 1;
-  top: 50%;
+  top: 18%;
   left: 50%;
   right: auto;
   -webkit-transform: translateX(-50%);
@@ -647,7 +647,7 @@ Subscribe
 }
 
 
-@-webkit-keyframes cd-translate {
+@-webkit-keyframes translate {
   0% {
     -webkit-transform: translateX(-50%);
   }
@@ -658,7 +658,7 @@ Subscribe
     -webkit-transform: translateX(-50%);
   }
 }
-@-moz-keyframes cd-translate {
+@-moz-keyframes translate {
   0% {
     -moz-transform: translateX(-50%);
   }
@@ -669,7 +669,7 @@ Subscribe
     -moz-transform: translateX(-50%);
   }
 }
-@keyframes cd-translate {
+@keyframes translate {
   0% {
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
@@ -926,84 +926,7 @@ figure.overlay.hover figcaption:after{
 	width: 200%;
 }
 
-/* --------------------------------
 
- contact page
-
----------------------------------- */
-form {
-
-  margin: 2% auto;
-  min-width: 350px;
-  color: #10428c;
-}
-
-input,
-textarea {
-  float: left;
-  width: 100%;
-  max-width: 100%;
-  height: 40px;
-  border: none;
-  margin: 0.5rem 0;
-  padding: 0.5rem 1rem;
-  border-radius: 0.3rem;
-  background: #efefef;
-  color: #10428c;
-  font-size: 0.8em;
-}
-input[type=submit],
-textarea[type=submit] {
-  background: #45b83c;
-  color: #fff;
-  font-weight: 400;
-  float: right;
-}
-input::placeholder,
-textarea::placeholder {
-  color: #10428c;
-}
-input.error,
-textarea.error {
-  background: #c04545;
-  color: #fff;
-}
-input.error::placeholder,
-textarea.error::placeholder {
-  color: #10428c;
-}
-
-textarea {
-  height: 12rem;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-
-
-/* -------------------------------- 
-
- Support for no js main site 
-
--------------------------------- */
-.no-js .nav-trigger, .no-js .scroll {
-  display: none;
-}
-
-.no-js .primary-nav {
-  position: relative;
-  height: auto;
-  min-height: 94px;
-  display: block;
-  opacity: 1;
-}
-.no-js .primary-nav::after {
-  clear: both;
-  content: "";
-  display: table;
-}
 .no-js .primary-nav ul {
   display: block;
   padding-left: calc(5% + 60px);
