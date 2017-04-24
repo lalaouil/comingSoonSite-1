@@ -333,7 +333,7 @@ Subscribe
   top: 0px;
   left: 0px;
   height: 100%;
-  width: 100%;
+  width: 99vw;
   cursor: pointer;
   -webkit-transition: -webkit-transform 0.4s;
   -moz-transition: -moz-transform 0.4s;
