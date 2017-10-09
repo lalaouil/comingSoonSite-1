@@ -184,9 +184,9 @@ button {
   margin-bottom: 14px;
   display: block;
   z-index: 1;
-  color: #8d5fd3;
-  font-family: "Muli", sans-serif;
-  font-size: 1.9em;
+  color: #8d5fd3 ;
+  font-family: “Muli”, sans-serif;
+  font-size: 1.4em;
   font-weight: 900;
   text-align: center;
 }
@@ -194,7 +194,7 @@ button {
 .head-explain p {
   max-width: 800px;
   margin: auto;
-  font-size: .6em;
+  font-size: .7em;
   line-height: 1.3;
 }
 
